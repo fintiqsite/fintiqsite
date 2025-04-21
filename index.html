@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FintiQ | Ana Sayfa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: url('images/digital-fintech-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f1f5f9;
+    }
+    header {
+      background-color: #111827;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo a {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+    .hero {
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      background: linear-gradient(to bottom, rgba(12,14,26,0.85), rgba(12,14,26,0.95));
+      color: white;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .tagline {
+      font-size: 1.4rem;
+      font-style: italic;
+      color: #38bdf8;
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto;
+      color: #d1d5db;
+    }
+    .section {
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-box {
+      background: rgba(31, 41, 55, 0.75);
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,198,174,0.25);
+    }
+    .service-box h3 {
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      font-size: 1.3rem;
+    }
+    .service-box p {
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .service-box a {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html">FintiQ</a></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="#">Hizmetler</a></li>
+        <li><a href="#">Hakkımızda</a></li>
+        <li><a href="#">İletişim</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="hero">
+    <h1>FintiQ</h1>
+    <p class="tagline">Where Fintech Meets Intelligent Execution</p>
+    <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
+  </div>
+  <section class="section">
+    <div class="service-box">
+      <h3>Strateji & Organizasyon</h3>
+      <p>Fintek'ler için vizyona uygun yapı, süreç ve OKR sistemleri kurarız.</p>
+      <a href="#">Detaylı İncele</a>
+    </div>
+    <div class="service-box">
+      <h3>Erken Aşama Danışmanlık</h3>
+      <p>Pre-seed/seed aşamasında ürün-pazar uyumu, yatırım hikâyesi ve MVP desteği sunarız.</p>
+      <a href="#">Detaylı İncele</a>
+    </div>
+    <div class="service-box">
+      <h3>İş Geliştirme</h3>
+      <p>Aktif fintek'ler için büyüme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
+      <a href="#">Detaylı İncele</a>
+    </div>
+    <div class="service-box">
+      <h3>Teknoloji & Altyapı</h3>
+      <p>Regülasyon uyumlu, doğru mimari ve çözüm ortağı seçimleri ile teknik yapılar kurarız.</p>
+      <a href="#">Detaylı İncele</a>
+    </div>
+    <div class="service-box">
+      <h3>İnsan Kaynağı</h3>
+      <p>Doğru ekip yapısı, liderlik gelişimi ve kültür mimarisiyle sürdürülebilir kadrolar inşa ederiz.</p>
+      <a href="#">Detaylı İncele</a>
+    </div>
+    <div class="service-box">
+      <h3>İletişim & Marka</h3>
+      <p>Stratejiye uygun içerik, mecra ve dil seçimiyle yatırımcı ve kullanıcıya doğru sesleniriz.</p>
+      <a href="#">Detaylı İncele</a>
+    </div>
+  </section>
+</body>
+</html>
