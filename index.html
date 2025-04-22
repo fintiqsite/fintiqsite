@@ -48,7 +48,7 @@
     }
     .hero {
       text-align: center;
-      padding: 8rem 2rem 6rem;
+      padding: 5rem 2rem 4rem;
       background: rgba(12,14,26,0.75);
       color: white;
     }
@@ -100,7 +100,53 @@
       color: #38bdf8;
       font-weight: 600;
     }
-  </style>
+      
+      
+    }
+
+    
+    
+      100% { opacity: 1; }
+    }
+    .hero-slider {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+}
+    .hero-slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+    .hero-slider .slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+    .hero-slider {
+      position: relative;
+      min-height: 260px;
+    }
+    .hero-slider .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero-slider .slide.active {
+      opacity: 1;
+      position: relative;
+    }
+</style>
 </head>
 <body>
   <header>
@@ -116,9 +162,23 @@
     </nav>
   </header>
   <div class="hero">
-    <h1>FintiQ</h1>
-    <p class="tagline">Where Fintech Meets Intelligent Execution</p>
-    <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
+    <div class="hero-slider">
+      <div class="slide active">
+        <h1>FintiQ</h1>
+        <p class="tagline">Where Fintech Meets Intelligent Execution</p>
+        <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
+      </div>
+      <div class="slide">
+        <h1>Geleceğin Finansal Yapılarını Şekillendiriyoruz</h1>
+        <p class="tagline">Strateji, teknoloji ve insan odağında</p>
+        <p>FintiQ, sürdürülebilir ve çevik fintech büyümesini destekler.</p>
+      </div>
+      <div class="slide">
+        <h1>Yatırıma Hazır Olun</h1>
+        <p class="tagline">Girişiminizi bir üst seviyeye taşıyın</p>
+        <p>İyi yapılandırılmış organizasyon ve net bir hikâye ile fark yaratın.</p>
+      </div>
+    </div>
   </div>
   <section class="section">
     <div class="service-box">
@@ -152,5 +212,16 @@
       <a href="services.html#communication">Detaylı İncele</a>
     </div>
   </section>
+
+
+<script>
+  const slides = document.querySelectorAll('.hero-slider .slide');
+  let index = 0;
+  setInterval(() => {
+    slides.forEach(slide => slide.classList.remove('active'));
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 5000);
+</script>
 </body>
 </html>
