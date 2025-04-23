@@ -24,12 +24,12 @@
       top: 0;
       z-index: 10;
     }
-    .logo a {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #ffffff;
-      text-decoration: none;
+    .logo img {
+      height: 60px;
+      object-fit: contain;
+      position: relative;
+      z-index: 11;
+      display: block;
     }
     nav ul {
       list-style: none;
@@ -127,10 +127,10 @@
 <body>
   <header>
     <div class="logo">
-  <a href="index.html">
-    <img src="images/fintiq_logo_transparent.png" alt="FintiQ Logo" style="height: 60px; object-fit: contain; background-color: transparent;">
-  </a>
-</div>
+      <a href="index.html">
+        <img src="images/fintiq_logo_transparent.png" alt="FintiQ Logo">
+      </a>
+    </div>
     <nav>
       <ul>
         <li><a href="index.html">Ana Sayfa</a></li>
