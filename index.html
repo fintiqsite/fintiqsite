@@ -238,13 +238,15 @@
       }, 5000);
     });
   </script>
-</body>
   <footer style="background-color:#0f172a; color:#cbd5e1; text-align:center; padding:1.5rem 1rem; font-size:0.9rem;">
   <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
 </footer>
-  <section style="background-color:#1f2937; color:#f1f5f9; text-align:center; padding:3rem 1rem;">
+  <div id="cta-bubble" style="position:fixed; bottom:2rem; right:2rem; background-color:#38bdf8; color:#0f172a; padding:1rem 1.25rem; border-radius:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.3); cursor:pointer; font-weight:600; z-index:1000;">
+  💬 Size nasıl yardımcı olabiliriz?
+</div>
+
+<section id="cta-form" style="background-color:#1f2937; color:#f1f5f9; text-align:center; padding:3rem 1rem; display:none;">
   <h2 style="font-size:1.5rem; margin-bottom:1rem;">Size Nasıl Yardımcı Olabiliriz?</h2>
-  
   <form action="mailto:info@fintiq.com" method="post" enctype="text/plain" style="max-width:500px; margin:0 auto; display:grid; gap:1rem;">
     <select name="ilgi" required style="padding:0.75rem; border-radius:8px; border:none;">
       <option value="" disabled selected>İlginizi Seçin</option>
@@ -257,12 +259,20 @@
     <button type="submit" style="background-color:#38bdf8; color:#0f172a; padding:0.75rem; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Gönder</button>
   </form>
   <p id="form-message" style="font-size: 0.9rem; color: #38bdf8; margin-top: 1rem; display: none;">
-  FintiQ ekibi en kısa sürede sizinle iletişime geçecektir.
-</p>
+    Form gönderildikten sonra FintiQ ekibi en kısa sürede sizinle iletişime geçecektir.
+  </p>
+</section>
+
 <script>
-  document.querySelector('form').addEventListener('submit', function(e) {
+  document.querySelector('#cta-bubble').addEventListener('click', function() {
+    const formSection = document.querySelector('#cta-form');
+    formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
+    window.scrollTo({ top: formSection.offsetTop, behavior: 'smooth' });
+  });
+
+  document.querySelector('#cta-form form').addEventListener('submit', function(e) {
     document.getElementById('form-message').style.display = 'block';
   });
 </script>
-</section>
+</body>
 </html>
