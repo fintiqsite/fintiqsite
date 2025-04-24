@@ -16,35 +16,63 @@
     }
     header {
       background-color: #111827;
-      padding: 1rem 2rem;
+      padding: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 10;
+      flex-wrap: wrap;
     }
     .logo img {
-      height: 60px;
+      height: 50px;
       object-fit: contain;
-      position: relative;
-      z-index: 11;
       display: block;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+    nav {
+      width: 100%;
     }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
-      margin: 0;
+      gap: 1rem;
+      margin: 1rem 0 0;
       padding: 0;
+      justify-content: flex-end;
     }
     nav ul li a {
       text-decoration: none;
       color: #e5e7eb;
       font-weight: 500;
+      font-size: 0.95rem;
     }
     nav ul li a:hover {
       color: #38bdf8;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+        background-color: #111827;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+      nav ul.active {
+        display: flex;
+      }
     }
     .hero {
       text-align: center;
@@ -131,9 +159,9 @@
         <img src="images/fintiq_logo_transparent.png" alt="FintiQ Logo">
       </a>
     </div>
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
     <nav>
       <ul>
-        <li><a href="index.html">Ana Sayfa</a></li>
         <li><a href="services.html">Hizmetlerimiz</a></li>
         <li><a href="about.html">Hakkımızda</a></li>
         <li><a href="contact.html">İletişim</a></li>
