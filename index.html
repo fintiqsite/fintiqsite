@@ -244,7 +244,7 @@
 </footer>
   <section style="background-color:#1f2937; color:#f1f5f9; text-align:center; padding:3rem 1rem;">
   <h2 style="font-size:1.5rem; margin-bottom:1rem;">Size Nasıl Yardımcı Olabiliriz?</h2>
-  <p style="margin-bottom:2rem;">Aşağıdan ilginizi belirleyin ve bilgilerinizi paylaşın. En kısa sürede sizinle iletişime geçelim.</p>
+  
   <form action="mailto:info@fintiq.com" method="post" enctype="text/plain" style="max-width:500px; margin:0 auto; display:grid; gap:1rem;">
     <select name="ilgi" required style="padding:0.75rem; border-radius:8px; border:none;">
       <option value="" disabled selected>İlginizi Seçin</option>
@@ -256,8 +256,13 @@
     <input type="email" name="email" placeholder="E-posta Adresiniz" required style="padding:0.75rem; border-radius:8px; border:none;">
     <button type="submit" style="background-color:#38bdf8; color:#0f172a; padding:0.75rem; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Gönder</button>
   </form>
-  <p style="font-size: 0.9rem; color: #38bdf8; margin-top: 1rem;">
-    FintiQ ekibi en kısa sürede sizinle iletişime geçecektir.
-  </p>
+  <p id="form-message" style="font-size: 0.9rem; color: #38bdf8; margin-top: 1rem; display: none;">
+  Form gönderildikten sonra FintiQ ekibi en kısa sürede sizinle iletişime geçecektir.
+</p>
+<script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    document.getElementById('form-message').style.display = 'block';
+  });
+</script>
 </section>
 </html>
