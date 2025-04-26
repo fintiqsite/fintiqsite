@@ -56,12 +56,6 @@
       font-weight: 600;
       cursor: pointer;
     }
-    button {
-      background-color: #38bdf8;
-      color: #0f172a;
-      font-weight: 600;
-      cursor: pointer;
-    }
     #form-message {
       margin-top: 1rem;
       color: #38bdf8;
@@ -69,16 +63,79 @@
       display: none;
       text-align: center;
     }
-  input::placeholder {
+    input::placeholder {
       color: #64748b;
     }
     select {
-      color: #0f172a;
+      color: #64748b;
     }
-button:hover {
+    button:hover {
       background-color: #60d1fb;
     }
-</style>
+    header {
+      background-color: #111827;
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo img {
+      height: 60px;
+      object-fit: contain;
+      display: block;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #e5e7eb;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #111827;
+        padding: 1rem;
+        border-radius: 8px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        right: 0;
+      }
+      nav ul.active {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -97,105 +154,36 @@ button:hover {
     </ul>
   </nav>
 </header>
-<style>
-header {
-  background-color: #111827;
-  padding: 0.75rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-.logo img {
-  height: 60px;
-  object-fit: contain;
-  display: block;
-}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #e5e7eb;
-  cursor: pointer;
-}
-nav {
-  display: flex;
-  align-items: center;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-nav ul li a {
-  text-decoration: none;
-  color: #e5e7eb;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-nav ul li a:hover {
-  color: #38bdf8;
-}
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  nav {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 0.5rem;
-  }
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    display: none;
-    background-color: #111827;
-    padding: 1rem;
-    border-radius: 8px;
-    width: 100%;
-  }
-  nav ul.active {
-    display: flex;
-  }
-}
-</style>
+
 <main>
   <form id="fintiq-form">
-  <h2 style="text-align:center; font-size:1.5rem; margin-bottom:1rem;">Size nasıl yardımcı olabiliriz?</h2>
-  <div style="display:flex; flex-direction:column; gap:0.5rem;">
-    <label style="display:flex; align-items:center; gap:0.5rem;">
-      <input type="radio" name="ilgi" value="danisma" required>
-      Danışma Kurulu'na Katılmak İstiyorum
-    </label>
-    <label style="display:flex; align-items:center; gap:0.5rem;">
-      <input type="radio" name="ilgi" value="iletisim" required>
-      FintiQ Ekibi Benimle İletişime Geçsin
-    </label>
-  </div>
-  <input type="text" name="adsoyad" placeholder="Ad Soyad" required>
-  <input type="tel" name="telefon" placeholder="Cep Telefonu" required>
-  <input type="email" name="email" placeholder="E-posta Adresiniz" required>
-  <select name="kaynak" required style="height:48px; padding:0.75rem; border-radius:8px; border:1px solid #ccc; font-size:1rem; background-color:#ffffff; color:#64748b; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
-  <option value="" disabled selected hidden>Bizi nereden duydunuz?</option>
-  <option value="Sosyal Medya">Sosyal Medya</option>
-  <option value="Fuar/Organizasyon">Fuar / Organizasyon</option>
-  <option value="Tavsiye">Tavsiye</option>
-  <option value="Diger">Diğer</option>
-</select>
-  </label>
-</div>
-  <input type="text" name="kod" placeholder="İletişim Kodu">
-<button type="submit" style="background-color:#38bdf8; color:#0f172a; font-weight:600; cursor:pointer;">Gönder</button>
-</form>
+    <h2 style="text-align:center; font-size:1.5rem; margin-bottom:1rem;">Size nasıl yardımcı olabiliriz?</h2>
+    <div style="display:flex; flex-direction:column; gap:0.5rem;">
+      <label style="display:flex; align-items:center; gap:0.5rem;">
+        <input type="radio" name="ilgi" value="danisma" required>
+        Danışma Kurulu'na Katılmak İstiyorum
+      </label>
+      <label style="display:flex; align-items:center; gap:0.5rem;">
+        <input type="radio" name="ilgi" value="iletisim" required>
+        FintiQ Ekibi Benimle İletişime Geçsin
+      </label>
+    </div>
+    <input type="text" name="adsoyad" placeholder="Ad Soyad" required>
+    <input type="tel" name="telefon" placeholder="Cep Telefonu" required>
+    <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+    <select name="kaynak" required>
+      <option value="" disabled selected>Bizi nereden duydunuz?</option>
+      <option value="Sosyal Medya">Sosyal Medya</option>
+      <option value="Fuar/Organizasyon">Fuar / Organizasyon</option>
+      <option value="Tavsiye">Tavsiye</option>
+      <option value="Diger">Diğer</option>
+    </select>
+    <input type="text" name="kod" placeholder="İletişim Kodu">
+    <button type="submit">Gönder</button>
+  </form>
   <p id="form-message">FintiQ ekibi en kısa sürede sizinle iletişime geçecektir.</p>
 </main>
+
 <footer>
   <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
 </footer>
