@@ -157,74 +157,120 @@
       opacity: 1;
       z-index: 1;
     }
+    footer {
+      background-color: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+    #cta-bubble {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1rem;
+      background-color: #38bdf8;
+      color: #0f172a;
+      padding: 0.75rem 1rem;
+      border-radius: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+      font-weight: 600;
+      z-index: 10;
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
-<!-- Geri kalan içerik buraya eklenecek -->
-<footer style="background-color:#0f172a; color:#cbd5e1; text-align:center; padding:1.5rem 1rem; font-size:0.9rem;">
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/fintiq_logo_transparent.png" alt="FintiQ Logo">
+    </a>
+  </div>
+  <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+  <nav>
+    <ul>
+      <li><a href="services.html">Hizmetlerimiz</a></li>
+      <li><a href="about.html">Hakkımızda</a></li>
+      <li><a href="contact.html">İletişim</a></li>
+      <li><a href="en.html">EN</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-slider">
+    <div class="slide active">
+      <h1>FintiQ</h1>
+      <p class="tagline">Where Fintech Meets Intelligent Execution</p>
+      <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
+    </div>
+    <div class="slide">
+      <h1>Geleceğin Finansal Yapılarını Şekillendiriyoruz</h1>
+      <p class="tagline">Strateji, teknoloji ve insan odağında</p>
+      <p>FintiQ, sürdürülebilir ve çevik fintech büyümesini destekler.</p>
+    </div>
+    <div class="slide">
+      <h1>Yatırıma Hazır Olun</h1>
+      <p class="tagline">Girişiminizi bir üst seviyeye taşıyın</p>
+      <p>İyi yapılandırılmış organizasyon ve net bir hikâye ile fark yaratın.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="service-box">
+    <h3>Strateji & Organizasyon</h3>
+    <p>Fintek'ler için vizyona uygun yapı, süreç ve OKR sistemleri kurarız.</p>
+    <a href="services.html#strategy">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>Erken Aşama Danışmanlık</h3>
+    <p>Pre-seed/seed aşamasında ürün-pazar uyumu, yatırım hikâyesi ve MVP desteği sunarız.</p>
+    <a href="services.html#early-stage">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İş Geliştirme</h3>
+    <p>Aktif fintek'ler için büyüme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
+    <a href="services.html#growth">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>Teknoloji & Altyapı</h3>
+    <p>Regülasyon uyumlu, doğru mimari ve çözüm ortağı seçimleri ile teknik yapılar kurarız.</p>
+    <a href="services.html#tech">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İnsan Kaynağı</h3>
+    <p>Doğru ekip yapısı, liderlik gelişimi ve kültür mimarisiyle sürdürülebilir kadrolar inşa ederiz.</p>
+    <a href="services.html#team">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İletişim & Marka</h3>
+    <p>Stratejiye uygun içerik, mecra ve dil seçimiyle yatırımcı ve kullanıcıya doğru sesleniriz.</p>
+    <a href="services.html#communication">Detaylı İncele</a>
+  </div>
+</section>
+
+<footer>
   <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
 </footer>
 
-<div id="cta-bubble" style="position:fixed; bottom:1.5rem; right:1rem; background-color:#38bdf8; color:#0f172a; padding:0.75rem 1rem; border-radius:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.3); cursor:pointer; font-weight:600; z-index:10; font-size:0.85rem;">
+<div id="cta-bubble">
   💬 Size nasıl yardımcı olabiliriz?
 </div>
 
-
-  <button id="form-close" style="position:absolute; top:1rem; right:1rem; background:none; border:none; color:#f1f5f9; font-size:1.5rem; cursor:pointer;">&times;</button>
-  <h2 style="font-size:1.5rem; margin-bottom:1rem;">Size Nasıl Yardımcı Olabiliriz?</h2>
-  <form id="fintiq-form" style="max-width:500px; margin:0 auto; display:grid; gap:1rem;">
-    <select name="ilgi" required style="padding:0.75rem; border-radius:8px; border:none;">
-      <option value="" disabled selected>İlginizi Seçin</option>
-      <option value="danisma">Danışma Kurulu'na Katılmak İstiyorum</option>
-      <option value="iletisim">FintiQ Ekibi Benimle İletişime Geçsin</option>
-    </select>
-    <input type="text" name="adsoyad" placeholder="Ad Soyad" required style="padding:0.75rem; border-radius:8px; border:none;">
-    <input type="tel" name="telefon" placeholder="Cep Telefonu" required style="padding:0.75rem; border-radius:8px; border:none;">
-    <input type="email" name="email" placeholder="E-posta Adresiniz" required style="padding:0.75rem; border-radius:8px; border:none;">
-    <button type="submit" style="background-color:#38bdf8; color:#0f172a; padding:0.75rem; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Gönder</button>
-  </form>
-  <p id="form-message" style="font-size: 0.9rem; color: #38bdf8; margin-top: 1rem; display: none;">
-    Form gönderildikten sonra FintiQ ekibi en kısa sürede sizinle iletişime geçecektir.
-  </p>
-</section>
-
 <script>
-  const bubble = document.querySelector('#cta-bubble');
-const formSection = document.querySelector('#cta-form');
-const closeBtn = document.getElementById('form-close');
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let index = 0;
+    setInterval(() => {
+      slides.forEach(slide => slide.classList.remove('active'));
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 5000);
 
-bubble.addEventListener('click', function () {
-  formSection.style.display = 'block';
-  bubble.style.display = 'none';
-});
-
-closeBtn.addEventListener('click', function () {
-  formSection.style.display = 'none';
-  bubble.style.display = 'block';
-});
-  });
-
-  document.getElementById("fintiq-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = {
-      ilgi: form.ilgi.value,
-      adsoyad: form.adsoyad.value,
-      telefon: form.telefon.value,
-      email: form.email.value
-    };
-
-    fetch("https://script.google.com/a/macros/fintiq.io/s/AKfycbyLjyO-h8vFwjcCGkx1EOZRTuk53ZVKUxaANuLLhZ-UFa2jEjRsHmpS9huHoGjXzZE/exec"),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(() => {
-      document.getElementById('form-message').style.display = 'block';
-    formSection.style.display = 'none';
-    bubble.style.display = 'block';
-      form.reset();
-    }).catch(err => {
-      alert("❌ Gönderim hatası: " + err);
+    document.getElementById('cta-bubble').addEventListener('click', function() {
+      window.location.href = 'contact.html';
     });
   });
 </script>
