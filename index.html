@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fintiq | Ana Sayfa</title>
+  <title>FintiQ | Ana Sayfa</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -30,16 +30,18 @@
       display: block;
     }
     .menu-toggle {
-      display: none;
       background: none;
       border: none;
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: #e5e7eb;
       cursor: pointer;
+      margin-left: auto; /* BURASI YENİ: butonu sağa ittik */
+      display: none;
     }
     nav {
       display: flex;
       align-items: center;
+      margin-left: auto; /* BURASI YENİ: nav'ı sağa al */
     }
     nav ul {
       list-style: none;
@@ -63,7 +65,6 @@
         display: block;
       }
       nav {
-        width: 100%;
         flex-direction: column;
         align-items: flex-end;
         margin-top: 0.5rem;
@@ -108,7 +109,8 @@
       margin: 0 auto;
     }
     .service-box {
-      background: rgba(31, 41, 55, 0.75); backdrop-filter: blur(6px);
+      background: rgba(31, 41, 55, 0.75);
+      backdrop-filter: blur(6px);
       border-radius: 16px;
       padding: 2rem;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -180,7 +182,9 @@
     }
   </style>
 </head>
+
 <body>
+
 <header>
   <div class="logo">
     <a href="index.html">
@@ -274,5 +278,6 @@
     });
   });
 </script>
+
 </body>
 </html>
