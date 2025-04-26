@@ -147,16 +147,22 @@ nav ul li a:hover {
 </style>
 <main>
   <form id="fintiq-form">
-    <select name="ilgi" required>
-      <option value="" disabled selected>İlginizi Seçin</option>
-      <option value="danisma">Danışma Kurulu'na Katılmak İstiyorum</option>
-      <option value="iletisim">FintiQ Ekibi Benimle İletişime Geçsin</option>
-    </select>
-    <input type="text" name="adsoyad" placeholder="Ad Soyad" required>
-    <input type="tel" name="telefon" placeholder="Cep Telefonu" required>
-    <input type="email" name="email" placeholder="E-posta Adresiniz" required>
-    <button type="submit">Gönder</button>
-  </form>
+  <h2 style="text-align:center; font-size:1.5rem; margin-bottom:1rem;">Size nasıl yardımcı olabiliriz?</h2>
+  <div style="display:flex; flex-direction:column; gap:0.5rem;">
+    <label style="display:flex; align-items:center; gap:0.5rem;">
+      <input type="radio" name="ilgi" value="danisma" required>
+      Danışma Kurulu'na Katılmak İstiyorum
+    </label>
+    <label style="display:flex; align-items:center; gap:0.5rem;">
+      <input type="radio" name="ilgi" value="iletisim" required>
+      FintiQ Ekibi Benimle İletişime Geçsin
+    </label>
+  </div>
+  <input type="text" name="adsoyad" placeholder="Ad Soyad" required>
+  <input type="tel" name="telefon" placeholder="Cep Telefonu" required>
+  <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+  <button type="submit">Gönder</button>
+</form>
   <p id="form-message">FintiQ ekibi en kısa sürede sizinle iletişime geçecektir.</p>
 </main>
 <footer>
