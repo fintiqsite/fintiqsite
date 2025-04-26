@@ -38,13 +38,23 @@
       gap: 1rem;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
-    input, select, button {
+    input, select {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background-color: #ffffff;
+      color: #0f172a;
+    }
+    button {
       padding: 0.75rem;
       border-radius: 8px;
       border: none;
       font-size: 1rem;
-      background-color: #1f2937;
-      color: #f1f5f9;
+      background-color: #38bdf8;
+      color: #0f172a;
+      font-weight: 600;
+      cursor: pointer;
     }
     button {
       background-color: #38bdf8;
@@ -59,8 +69,11 @@
       display: none;
       text-align: center;
     }
-  input::placeholder, select {
-      color: #cbd5e1;
+  input::placeholder {
+      color: #64748b;
+    }
+    select {
+      color: #0f172a;
     }
 button:hover {
       background-color: #60d1fb;
