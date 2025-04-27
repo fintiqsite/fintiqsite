@@ -266,11 +266,8 @@ index.html
 
 <script>
   document.querySelector('#cta-bubble').addEventListener('click', function() {
-    const formSection = document.querySelector('#cta-form');
-    formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
-    window.scrollTo({ top: formSection.offsetTop, behavior: 'smooth' });
-  });
-
+  window.location.href = 'contact.html';
+});
   document.querySelector('#cta-form form').addEventListener('submit', function(e) {
     document.getElementById('form-message').style.display = 'block';
   });
