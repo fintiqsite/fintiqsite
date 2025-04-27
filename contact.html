@@ -84,7 +84,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
-        margin: 0;
       }
       nav ul.active {
         display: flex;
@@ -132,18 +131,19 @@
     button:hover {
       background-color: #60d1fb;
     }
-    footer {
-      background-color: #111827;
-      padding: 1rem 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
     #form-message {
       margin-top: 1rem;
       color: #38bdf8;
       font-size: 0.9rem;
       display: none;
       text-align: center;
+    }
+    footer {
+      background-color: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -200,6 +200,10 @@
 </footer>
 
 <script>
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('active');
+  });
+
   document.getElementById("fintiq-form").addEventListener("submit", function(e) {
     e.preventDefault();
     const form = e.target;
@@ -211,6 +215,7 @@
       kaynak: form.kaynak.value,
       kod: form.kod.value
     };
+
     fetch("https://script.google.com/a/macros/fintiq.io/s/AKfycbwcZkCl0f970J7svbRgY9EKb4Gv5dgfueQ0f8-25EBs0FpMGpnCYTXUm2d1p3hpXr7X/exec", {
       method: "POST",
       body: JSON.stringify(data),
@@ -219,12 +224,4 @@
       }
     }).then(() => {
       document.getElementById('form-message').style.display = 'block';
-      form.reset();
-    }).catch(err => {
-      alert("❌ Gönderim hatası: " + err);
-    });
-  });
-</script>
-
-</body>
-</html>
+      form.reset
