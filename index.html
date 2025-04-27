@@ -61,6 +61,25 @@
     nav ul li a:hover, nav ul li a.active {
       color: #38bdf8;
     }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #111827;
+        padding: 1rem;
+        border-radius: 8px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        right: 0;
+      }
+      nav ul.active {
+        display: flex;
+      }
+    }
     main {
       flex: 1;
     }
@@ -95,12 +114,6 @@
       font-style: italic;
       color: #38bdf8;
       margin-bottom: 1.5rem;
-    }
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 720px;
-      margin: 0 auto;
-      color: #d1d5db;
     }
     .section {
       padding: 5rem 2rem;
@@ -153,28 +166,8 @@
       z-index: 10;
       font-size: 0.85rem;
     }
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #111827;
-        padding: 1rem;
-        border-radius: 8px;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        right: 0;
-      }
-      nav ul.active {
-        display: flex;
-      }
-    }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -186,10 +179,10 @@
   <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
   <nav>
     <ul>
-      <li><a href="index.html" class="active">Ana Sayfa</a></li>
       <li><a href="services.html">Hizmetlerimiz</a></li>
       <li><a href="about.html">Hakkımızda</a></li>
       <li><a href="contact.html">İletişim</a></li>
+      <li><a href="en.html">EN</a></li>
     </ul>
   </nav>
 </header>
@@ -250,17 +243,6 @@
 </div>
 
 <script>
-  const links = document.querySelectorAll('nav ul li a');
-  links.forEach(link => {
-    if (link.href === window.location.href) {
-      link.classList.add('active');
-    }
-  });
-
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('nav ul').classList.toggle('active');
-  });
-
   document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll('.hero-slider .slide');
     let index = 0;
@@ -269,6 +251,17 @@
       index = (index + 1) % slides.length;
       slides[index].classList.add('active');
     }, 5000);
+
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
   });
 </script>
 
