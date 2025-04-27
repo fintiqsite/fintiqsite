@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fintiq | Ana Sayfa</title>
+  <title>FintiQ | Ana Sayfa</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -37,10 +37,6 @@
       color: #e5e7eb;
       cursor: pointer;
     }
-    nav {
-      display: flex;
-      align-items: center;
-    }
     nav ul {
       list-style: none;
       display: flex;
@@ -59,35 +55,23 @@
       color: #38bdf8;
     }
     @media (max-width: 768px) {
-      header {
-        flex-wrap: wrap;
-      }
       .menu-toggle {
         display: block;
-        margin-left: auto;
-      }
-      nav {
-        position: absolute;
-        top: 70px;
-        right: 1rem;
-        background-color: #111827;
-        border-radius: 8px;
-        padding: 1rem;
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        width: auto;
-        z-index: 9;
-      }
-      nav.active {
-        display: flex;
       }
       nav ul {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        margin: 0;
-        padding: 0;
+        background-color: #111827;
+        padding: 1rem;
+        border-radius: 8px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 1000;
+      }
+      nav ul.active {
+        display: flex;
       }
     }
     .hero {
@@ -117,7 +101,8 @@
       margin: 0 auto;
     }
     .service-box {
-      background: rgba(31, 41, 55, 0.75); backdrop-filter: blur(6px);
+      background: rgba(31, 41, 55, 0.75);
+      backdrop-filter: blur(6px);
       border-radius: 16px;
       padding: 2rem;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -169,14 +154,15 @@
   </style>
 </head>
 <body>
+
 <header>
   <div class="logo">
     <a href="index.html">
       <img src="images/fintiq_logo_transparent.png" alt="FintiQ Logo">
     </a>
   </div>
-  <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
-  <nav>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <nav id="nav-menu">
     <ul>
       <li><a href="services.html">Hizmetlerimiz</a></li>
       <li><a href="about.html">Hakkımızda</a></li>
@@ -248,10 +234,15 @@
 </div>
 
 <script>
-  document.querySelector('#cta-bubble').addEventListener('click', function() {
-    window.location.href = 'contact.html';
+  // Hamburger Menu Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu').querySelector('ul');
+
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
   });
 
+  // Slider
   document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll('.hero-slider .slide');
     let index = 0;
@@ -261,6 +252,12 @@
       slides[index].classList.add('active');
     }, 5000);
   });
+
+  // CTA Bubble
+  document.querySelector('#cta-bubble').addEventListener('click', function() {
+    window.location.href = 'contact.html';
+  });
 </script>
+
 </body>
 </html>
