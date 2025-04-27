@@ -14,7 +14,6 @@
       background-color: #0f172a;
       color: #f1f5f9;
     }
-
     header {
       background-color: #111827;
       padding: 0.75rem 2rem;
@@ -25,14 +24,11 @@
       top: 0;
       z-index: 10;
     }
-
     .logo img {
       height: 60px;
       object-fit: contain;
       display: block;
-      max-width: 100%;
     }
-
     .menu-toggle {
       display: none;
       background: none;
@@ -42,12 +38,10 @@
       cursor: pointer;
       margin-left: auto;
     }
-
     nav {
       display: flex;
       align-items: center;
     }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -56,18 +50,15 @@
       padding: 0;
       align-items: center;
     }
-
     nav ul li a {
       text-decoration: none;
       color: #e5e7eb;
       font-weight: 500;
       font-size: 0.95rem;
     }
-
     nav ul li a:hover {
       color: #38bdf8;
     }
-
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -87,28 +78,24 @@
         display: flex;
       }
     }
-
     .hero {
       text-align: center;
       padding: 5rem 2rem 4rem;
       background: rgba(12,14,26,0.75);
       color: white;
     }
-
     .tagline {
       font-size: 1.4rem;
       font-style: italic;
       color: #38bdf8;
       margin-bottom: 1.5rem;
     }
-
     .hero p {
       font-size: 1.15rem;
       max-width: 720px;
       margin: 0 auto;
       color: #d1d5db;
     }
-
     .section {
       padding: 5rem 2rem;
       display: grid;
@@ -117,7 +104,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .service-box {
       background: rgba(31, 41, 55, 0.75);
       backdrop-filter: blur(6px);
@@ -126,24 +112,20 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .service-box:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 32px rgba(0,198,174,0.25);
     }
-
     .service-box h3 {
       color: #ffffff;
       margin-bottom: 0.75rem;
       font-size: 1.3rem;
     }
-
     .service-box p {
       color: #cbd5e1;
       font-size: 1rem;
       line-height: 1.6;
     }
-
     .service-box a {
       display: inline-block;
       margin-top: 1rem;
@@ -151,13 +133,11 @@
       color: #38bdf8;
       font-weight: 600;
     }
-
     .hero-slider {
       position: relative;
       height: 280px;
       overflow: hidden;
     }
-
     .hero-slider .slide {
       position: absolute;
       top: 0;
@@ -171,12 +151,10 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
-
     .hero-slider .slide.active {
       opacity: 1;
       z-index: 1;
     }
-
     footer {
       background-color: #0f172a;
       color: #cbd5e1;
@@ -184,7 +162,6 @@
       padding: 1.5rem 1rem;
       font-size: 0.9rem;
     }
-
     #cta-bubble {
       position: fixed;
       bottom: 1.5rem;
@@ -201,7 +178,6 @@
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -221,58 +197,10 @@
   </nav>
 </header>
 
-<div class="hero">
-  <div class="hero-slider">
-    <div class="slide active">
-      <h1>FintiQ</h1>
-      <p class="tagline">Where Fintech Meets Intelligent Execution</p>
-      <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
-    </div>
-    <div class="slide">
-      <h1>Geleceğin Finansal Yapılarını Şekillendiriyoruz</h1>
-      <p class="tagline">Strateji, teknoloji ve insan odağında</p>
-      <p>FintiQ, sürdürülebilir ve çevik fintech büyümesini destekler.</p>
-    </div>
-    <div class="slide">
-      <h1>Yatırıma Hazır Olun</h1>
-      <p class="tagline">Girişiminizi bir üst seviyeye taşıyın</p>
-      <p>İyi yapılandırılmış organizasyon ve net bir hikâye ile fark yaratın.</p>
-    </div>
-  </div>
-</div>
+<!-- BURADAN İTİBAREN SENİN ANA SAYFA İÇERİKLERİN DEVAM EDECEK -->
+<!-- Hero, Section, Footer vs. -->
 
-<section class="section">
-  <div class="service-box">
-    <h3>Strateji & Organizasyon</h3>
-    <p>Fintek'ler için vizyona uygun yapı, süreç ve OKR sistemleri kurarız.</p>
-    <a href="services.html#strategy">Detaylı İncele</a>
-  </div>
-  <div class="service-box">
-    <h3>Erken Aşama Danışmanlık</h3>
-    <p>Pre-seed/seed aşamasında ürün-pazar uyumu, yatırım hikâyesi ve MVP desteği sunarız.</p>
-    <a href="services.html#early-stage">Detaylı İncele</a>
-  </div>
-  <div class="service-box">
-    <h3>İş Geliştirme</h3>
-    <p>Aktif fintek'ler için büyüme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
-    <a href="services.html#growth">Detaylı İncele</a>
-  </div>
-  <div class="service-box">
-    <h3>Teknoloji & Altyapı</h3>
-    <p>Regülasyon uyumlu, doğru mimari ve çözüm ortağı seçimleri ile teknik yapılar kurarız.</p>
-    <a href="services.html#tech">Detaylı İncele</a>
-  </div>
-  <div class="service-box">
-    <h3>İnsan Kaynağı</h3>
-    <p>Doğru ekip yapısı, liderlik gelişimi ve kültür mimarisiyle sürdürülebilir kadrolar inşa ederiz.</p>
-    <a href="services.html#team">Detaylı İncele</a>
-  </div>
-  <div class="service-box">
-    <h3>İletişim & Marka</h3>
-    <p>Stratejiye uygun içerik, mecra ve dil seçimiyle yatırımcı ve kullanıcıya doğru sesleniriz.</p>
-    <a href="services.html#communication">Detaylı İncele</a>
-  </div>
-</section>
+<!-- Slider ve diğer içerik kodların buraya gelecek -->
 
 <footer>
   <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
