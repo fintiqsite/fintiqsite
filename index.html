@@ -6,7 +6,6 @@
   <title>FintiQ | Ana Sayfa</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
-    /* Ortak CSS buraya */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -66,6 +65,74 @@
       flex: 1;
       padding: 2rem;
     }
+    .hero-slider {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: rgba(12,14,26,0.75);
+      color: white;
+    }
+    .hero-slider .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero-slider .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .tagline {
+      font-size: 1.4rem;
+      font-style: italic;
+      color: #38bdf8;
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto;
+      color: #d1d5db;
+    }
+    .section {
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-box {
+      background: rgba(31, 41, 55, 0.75);
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0,198,174,0.25);
+    }
+    .service-box h3 {
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      font-size: 1.3rem;
+    }
+    .service-box p {
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
     footer {
       background-color: #0f172a;
       color: #cbd5e1;
@@ -94,6 +161,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -114,11 +182,23 @@
 </header>
 
 <main>
-  <section class="hero">
-    <h1>FintiQ</h1>
-    <p class="tagline">Where Fintech Meets Intelligent Execution</p>
-    <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
-  </section>
+  <div class="hero-slider">
+    <div class="slide active">
+      <h1>FintiQ</h1>
+      <p class="tagline">Where Fintech Meets Intelligent Execution</p>
+      <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
+    </div>
+    <div class="slide">
+      <h1>Geleceğin Finansal Yapılarını Şekillendiriyoruz</h1>
+      <p class="tagline">Strateji, teknoloji ve insan odağında</p>
+      <p>FintiQ, sürdürülebilir ve çevik fintech büyümesini destekler.</p>
+    </div>
+    <div class="slide">
+      <h1>Yatırıma Hazır Olun</h1>
+      <p class="tagline">Girişiminizi bir üst seviyeye taşıyın</p>
+      <p>İyi yapılandırılmış organizasyon ve net bir hikâye ile fark yaratın.</p>
+    </div>
+  </div>
 
   <section class="section">
     <div class="service-box">
@@ -132,6 +212,18 @@
     <div class="service-box">
       <h3>İş Geliştirme</h3>
       <p>Aktif fintek'ler için büyüme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
+    </div>
+    <div class="service-box">
+      <h3>Teknoloji & Altyapı</h3>
+      <p>Regülasyon uyumlu, doğru mimari ve çözüm ortağı seçimleri ile teknik yapılar kurarız.</p>
+    </div>
+    <div class="service-box">
+      <h3>İnsan Kaynağı</h3>
+      <p>Doğru ekip yapısı, liderlik gelişimi ve kültür mimarisiyle sürdürülebilir kadrolar inşa ederiz.</p>
+    </div>
+    <div class="service-box">
+      <h3>İletişim & Marka</h3>
+      <p>Stratejiye uygun içerik, mecra ve dil seçimiyle yatırımcı ve kullanıcıya doğru sesleniriz.</p>
     </div>
   </section>
 </main>
@@ -150,6 +242,16 @@
 
   document.querySelector('.menu-toggle').addEventListener('click', function() {
     document.querySelector('nav ul').classList.toggle('active');
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let index = 0;
+    setInterval(() => {
+      slides.forEach(slide => slide.classList.remove('active'));
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 5000);
   });
 </script>
 
