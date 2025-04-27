@@ -14,7 +14,6 @@
       background-color: #0f172a;
       color: #f1f5f9;
     }
-
     header {
       background-color: #111827;
       padding: 0.75rem 2rem;
@@ -25,50 +24,43 @@
       top: 0;
       z-index: 10;
     }
-
     .logo img {
       height: 60px;
       object-fit: contain;
       display: block;
     }
-
     .menu-toggle {
       display: none;
       background: none;
       border: none;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: #e5e7eb;
       cursor: pointer;
     }
-
     nav {
       display: flex;
       align-items: center;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
       margin: 0;
       padding: 0;
+      align-items: center;
     }
-
     nav ul li a {
       text-decoration: none;
       color: #e5e7eb;
       font-weight: 500;
       font-size: 0.95rem;
     }
-
     nav ul li a:hover {
       color: #38bdf8;
     }
-
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
-        margin-left: auto;
       }
       nav {
         display: none;
@@ -77,43 +69,39 @@
         padding: 1rem;
         border-radius: 8px;
         position: absolute;
-        top: 70px;
+        top: 100%;
         right: 2rem;
-        width: auto;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      }
-      nav.active {
-        display: flex;
+        width: 200px;
+        z-index: 9;
       }
       nav ul {
         flex-direction: column;
         align-items: flex-start;
-        width: 100%;
         gap: 1rem;
+        margin: 0;
+      }
+      nav.active {
+        display: flex;
       }
     }
-
     .hero {
       text-align: center;
       padding: 5rem 2rem 4rem;
       background: rgba(12,14,26,0.75);
       color: white;
     }
-
     .tagline {
       font-size: 1.4rem;
       font-style: italic;
       color: #38bdf8;
       margin-bottom: 1.5rem;
     }
-
     .hero p {
       font-size: 1.15rem;
       max-width: 720px;
       margin: 0 auto;
       color: #d1d5db;
     }
-
     .section {
       padding: 5rem 2rem;
       display: grid;
@@ -122,7 +110,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .service-box {
       background: rgba(31, 41, 55, 0.75);
       backdrop-filter: blur(6px);
@@ -131,24 +118,20 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .service-box:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 32px rgba(0,198,174,0.25);
     }
-
     .service-box h3 {
       color: #ffffff;
       margin-bottom: 0.75rem;
       font-size: 1.3rem;
     }
-
     .service-box p {
       color: #cbd5e1;
       font-size: 1rem;
       line-height: 1.6;
     }
-
     .service-box a {
       display: inline-block;
       margin-top: 1rem;
@@ -156,13 +139,11 @@
       color: #38bdf8;
       font-weight: 600;
     }
-
     .hero-slider {
       position: relative;
       height: 280px;
       overflow: hidden;
     }
-
     .hero-slider .slide {
       position: absolute;
       top: 0;
@@ -176,22 +157,12 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
-
     .hero-slider .slide.active {
       opacity: 1;
       z-index: 1;
     }
-
-    footer {
-      background-color: #0f172a;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-    }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -200,7 +171,7 @@
       <img src="images/fintiq_logo_transparent.png" alt="FintiQ Logo">
     </a>
   </div>
-  <button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">☰</button>
+  <button class="menu-toggle">☰</button>
   <nav>
     <ul>
       <li><a href="services.html">Hizmetlerimiz</a></li>
@@ -264,7 +235,7 @@
   </div>
 </section>
 
-<footer>
+<footer style="background-color:#0f172a; color:#cbd5e1; text-align:center; padding:1.5rem 1rem; font-size:0.9rem;">
   <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
 </footer>
 
@@ -273,11 +244,14 @@
 </div>
 
 <script>
-  document.querySelector('#cta-bubble').addEventListener('click', function() {
-    window.location.href = 'contact.html';
-  });
-
   document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', function() {
+      nav.classList.toggle('active');
+    });
+
     const slides = document.querySelectorAll('.hero-slider .slide');
     let index = 0;
     setInterval(() => {
@@ -286,8 +260,9 @@
       slides[index].classList.add('active');
     }, 5000);
 
-    document.querySelector('.menu-toggle').addEventListener('click', function() {
-      document.querySelector('nav').classList.toggle('active');
+    const ctaBubble = document.getElementById('cta-bubble');
+    ctaBubble.addEventListener('click', function() {
+      window.location.href = 'contact.html';
     });
   });
 </script>
