@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FintiQ | Ana Sayfa</title>
+  <title>Fintiq | Ana Sayfa</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
-    /* Ortak stiller */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -14,9 +13,6 @@
       background-size: cover;
       background-color: #0f172a;
       color: #f1f5f9;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
     header {
       background-color: #111827;
@@ -40,6 +36,7 @@
       font-size: 1.5rem;
       color: #e5e7eb;
       cursor: pointer;
+      margin-left: auto; /* 🔥 BURAYA EKLENDİ */
     }
     nav {
       display: flex;
@@ -59,62 +56,49 @@
       font-weight: 500;
       font-size: 0.95rem;
     }
-    nav ul li a:hover, nav ul li a.active {
+    nav ul li a:hover {
       color: #38bdf8;
     }
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
       }
-      nav ul {
-        display: none;
+      nav {
+        width: 100%;
         flex-direction: column;
+        align-items: flex-end;
+        margin-top: 0.5rem;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
         background-color: #111827;
         padding: 1rem;
         border-radius: 8px;
         width: 100%;
-        position: absolute;
-        top: 100%;
-        right: 0;
       }
       nav ul.active {
         display: flex;
       }
     }
-    main {
-      flex: 1;
-    }
-    .hero-slider {
-      position: relative;
-      height: 280px;
-      overflow: hidden;
+    .hero {
       text-align: center;
       padding: 5rem 2rem 4rem;
       background: rgba(12,14,26,0.75);
       color: white;
-    }
-    .hero-slider .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .hero-slider .slide.active {
-      opacity: 1;
-      z-index: 1;
     }
     .tagline {
       font-size: 1.4rem;
       font-style: italic;
       color: #38bdf8;
       margin-bottom: 1.5rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin: 0 auto;
+      color: #d1d5db;
     }
     .section {
       padding: 5rem 2rem;
@@ -146,31 +130,39 @@
       font-size: 1rem;
       line-height: 1.6;
     }
-    footer {
-      background-color: #0f172a;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
-    }
-    #cta-bubble {
-      position: fixed;
-      bottom: 1.5rem;
-      right: 1rem;
-      background-color: #38bdf8;
-      color: #0f172a;
-      padding: 0.75rem 1rem;
-      border-radius: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      cursor: pointer;
+    .service-box a {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      color: #38bdf8;
       font-weight: 600;
-      z-index: 10;
-      font-size: 0.85rem;
+    }
+    .hero-slider {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+    .hero-slider .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .hero-slider .slide.active {
+      opacity: 1;
+      z-index: 1;
     }
   </style>
 </head>
-<body>
 
+<body>
 <header>
   <div class="logo">
     <a href="index.html">
@@ -188,7 +180,7 @@
   </nav>
 </header>
 
-<main>
+<div class="hero">
   <div class="hero-slider">
     <div class="slide active">
       <h1>FintiQ</h1>
@@ -206,48 +198,40 @@
       <p>İyi yapılandırılmış organizasyon ve net bir hikâye ile fark yaratın.</p>
     </div>
   </div>
-
-  <section class="section">
-    <div class="service-box">
-      <h3>Strateji & Organizasyon</h3>
-      <p>Fintek'ler için vizyona uygun yapı, süreç ve OKR sistemleri kurarız.</p>
-      <a href="services.html#strategy">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>Erken Aşama Danışmanlık</h3>
-      <p>Pre-seed/seed aşamasında ürün-pazar uyumu, yatırım hikâyesi ve MVP desteği sunarız.</p>
-      <a href="services.html#early-stage">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>İş Geliştirme</h3>
-      <p>Aktif fintek'ler için büyüme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
-      <a href="services.html#growth">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>Teknoloji & Altyapı</h3>
-      <p>Regülasyon uyumlu, doğru mimari ve çözüm ortağı seçimleri ile teknik yapılar kurarız.</p>
-      <a href="services.html#tech">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>İnsan Kaynağı</h3>
-      <p>Doğru ekip yapısı, liderlik gelişimi ve kültür mimarisiyle sürdürülebilir kadrolar inşa ederiz.</p>
-      <a href="services.html#team">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>İletişim & Marka</h3>
-      <p>Stratejiye uygun içerik, mecra ve dil seçimiyle yatırımcı ve kullanıcıya doğru sesleniriz.</p>
-      <a href="services.html#communication">Detaylı İncele</a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
-</footer>
-
-<div id="cta-bubble" onclick="window.location.href='contact.html';">
-  💬 Size nasıl yardımcı olabiliriz?
 </div>
+
+<section class="section">
+  <div class="service-box">
+    <h3>Strateji & Organizasyon</h3>
+    <p>Fintek'ler için vizyona uygun yapı, süreç ve OKR sistemleri kurarız.</p>
+    <a href="services.html#strategy">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>Erken Aşama Danışmanlık</h3>
+    <p>Pre-seed/seed aşamasında ürün-pazar uyumu, yatırım hikâyesi ve MVP desteği sunarız.</p>
+    <a href="services.html#early-stage">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İş Geliştirme</h3>
+    <p>Aktif fintek'ler için büyüme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
+    <a href="services.html#growth">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>Teknoloji & Altyapı</h3>
+    <p>Regülasyon uyumlu, doğru mimari ve çözüm ortağı seçimleri ile teknik yapılar kurarız.</p>
+    <a href="services.html#tech">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İnsan Kaynağı</h3>
+    <p>Doğru ekip yapısı, liderlik gelişimi ve kültür mimarisiyle sürdürülebilir kadrolar inşa ederiz.</p>
+    <a href="services.html#team">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İletişim & Marka</h3>
+    <p>Stratejiye uygun içerik, mecra ve dil seçimiyle yatırımcı ve kullanıcıya doğru sesleniriz.</p>
+    <a href="services.html#communication">Detaylı İncele</a>
+  </div>
+</section>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -258,19 +242,45 @@
       index = (index + 1) % slides.length;
       slides[index].classList.add('active');
     }, 5000);
-
-    document.querySelector('.menu-toggle').addEventListener('click', function () {
-      document.querySelector('nav ul').classList.toggle('active');
-    });
-
-    const links = document.querySelectorAll('nav ul li a');
-    links.forEach(link => {
-      if (link.href === window.location.href) {
-        link.classList.add('active');
-      }
-    });
   });
 </script>
 
+<footer style="background-color:#0f172a; color:#cbd5e1; text-align:center; padding:1.5rem 1rem; font-size:0.9rem;">
+  <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
+</footer>
+
+<div id="cta-bubble" style="position:fixed; bottom:1.5rem; right:1rem; background-color:#38bdf8; color:#0f172a; padding:0.75rem 1rem; border-radius:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.3); cursor:pointer; font-weight:600; z-index:10; font-size:0.85rem;">
+  💬 Size nasıl yardımcı olabiliriz?
+</div>
+
+<section id="cta-form" style="background-color:#1f2937; color:#f1f5f9; text-align:center; padding:3rem 1rem 6rem; display:none;">
+  <h2 style="font-size:1.5rem; margin-bottom:1rem;">Size Nasıl Yardımcı Olabiliriz?</h2>
+  <form action="mailto:info@fintiq.com" method="post" enctype="text/plain" style="max-width:500px; margin:0 auto; display:grid; gap:1rem;">
+    <select name="ilgi" required style="padding:0.75rem; border-radius:8px; border:none;">
+      <option value="" disabled selected>İlginizi Seçin</option>
+      <option value="danisma">Danışma Kurulu'na Katılmak İstiyorum</option>
+      <option value="iletisim">FintiQ Ekibi Benimle İletişime Geçsin</option>
+    </select>
+    <input type="text" name="adsoyad" placeholder="Ad Soyad" required style="padding:0.75rem; border-radius:8px; border:none;">
+    <input type="tel" name="telefon" placeholder="Cep Telefonu" required style="padding:0.75rem; border-radius:8px; border:none;">
+    <input type="email" name="email" placeholder="E-posta Adresiniz" required style="padding:0.75rem; border-radius:8px; border:none;">
+    <button type="submit" style="background-color:#38bdf8; color:#0f172a; padding:0.75rem; border:none; border-radius:8px; font-weight:600; cursor:pointer;">Gönder</button>
+  </form>
+  <p id="form-message" style="font-size: 0.9rem; color: #38bdf8; margin-top: 1rem; display: none;">
+    FintiQ ekibi en kısa sürede sizinle iletişime geçecektir.
+  </p>
+</section>
+
+<script>
+  document.querySelector('#cta-bubble').addEventListener('click', function() {
+    const formSection = document.querySelector('#cta-form');
+    formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
+    window.scrollTo({ top: formSection.offsetTop, behavior: 'smooth' });
+  });
+
+  document.querySelector('#cta-form form').addEventListener('submit', function(e) {
+    document.getElementById('form-message').style.display = 'block';
+  });
+</script>
 </body>
 </html>
