@@ -59,23 +59,31 @@
       color: #38bdf8;
     }
     @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+      }
       .menu-toggle {
         display: block;
+        margin-left: auto;
       }
       nav {
-        width: 100%;
+        position: absolute;
+        top: 70px;
+        right: 1rem;
+        background-color: #111827;
+        border-radius: 8px;
+        padding: 1rem;
+        display: none;
         flex-direction: column;
-        align-items: flex-end;
-        margin-top: 0.5rem;
+        align-items: flex-start;
+        width: auto;
+        z-index: 9;
       }
       nav ul {
         flex-direction: column;
         align-items: flex-start;
-        display: none;
-        background-color: #111827;
-        padding: 1rem;
-        border-radius: 8px;
-        width: 100%;
+        gap: 1rem;
+        margin: 0;
       }
       nav ul.active {
         display: flex;
@@ -160,7 +168,7 @@
   </style>
 </head>
 <body>
-  <header>
+<header>
   <div class="logo">
     <a href="index.html">
       <img src="images/fintiq_logo_transparent.png" alt="FintiQ Logo">
@@ -177,81 +185,81 @@
   </nav>
 </header>
 
-  <div class="hero">
-    <div class="hero-slider">
-      <div class="slide active">
-        <h1>FintiQ</h1>
-        <p class="tagline">Where Fintech Meets Intelligent Execution</p>
-        <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
-      </div>
-      <div class="slide">
-        <h1>Geleceğin Finansal Yapılarını Şekillendiriyoruz</h1>
-        <p class="tagline">Strateji, teknoloji ve insan odağında</p>
-        <p>FintiQ, sürdürülebilir ve çevik fintech büyümesini destekler.</p>
-      </div>
-      <div class="slide">
-        <h1>Yatırıma Hazır Olun</h1>
-        <p class="tagline">Girişiminizi bir üst seviyeye taşıyın</p>
-        <p>İyi yapılandırılmış organizasyon ve net bir hikâye ile fark yaratın.</p>
-      </div>
+<div class="hero">
+  <div class="hero-slider">
+    <div class="slide active">
+      <h1>FintiQ</h1>
+      <p class="tagline">Where Fintech Meets Intelligent Execution</p>
+      <p>Fintech'e özel strateji, organizasyon, teknoloji ve iletişim danışmanlığı.</p>
+    </div>
+    <div class="slide">
+      <h1>Geleceğin Finansal Yapılarını Şekillendiriyoruz</h1>
+      <p class="tagline">Strateji, teknoloji ve insan odağında</p>
+      <p>FintiQ, sürdürülebilir ve çevik fintech büyüemesini destekler.</p>
+    </div>
+    <div class="slide">
+      <h1>Yatırıma Hazır Olun</h1>
+      <p class="tagline">Girişiminizi bir üst seviyeye taşıyın</p>
+      <p>İyi yapılandırılmış organizasyon ve net bir hikâye ile fark yaratın.</p>
     </div>
   </div>
+</div>
 
-  <section class="section">
-    <div class="service-box">
-      <h3>Strateji & Organizasyon</h3>
-      <p>Fintek'ler için vizyona uygun yapı, süreç ve OKR sistemleri kurarız.</p>
-      <a href="services.html#strategy">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>Erken Aşama Danışmanlık</h3>
-      <p>Pre-seed/seed aşamasında ürün-pazar uyumu, yatırım hikâyesi ve MVP desteği sunarız.</p>
-      <a href="services.html#early-stage">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>İş Geliştirme</h3>
-      <p>Aktif fintek'ler için büyüme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
-      <a href="services.html#growth">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>Teknoloji & Altyapı</h3>
-      <p>Regülasyon uyumlu, doğru mimari ve çözüm ortağı seçimleri ile teknik yapılar kurarız.</p>
-      <a href="services.html#tech">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>İnsan Kaynağı</h3>
-      <p>Doğru ekip yapısı, liderlik gelişimi ve kültür mimarisiyle sürdürülebilir kadrolar inşa ederiz.</p>
-      <a href="services.html#team">Detaylı İncele</a>
-    </div>
-    <div class="service-box">
-      <h3>İletişim & Marka</h3>
-      <p>Stratejiye uygun içerik, mecra ve dil seçimiyle yatırımcı ve kullanıcıya doğru sesleniriz.</p>
-      <a href="services.html#communication">Detaylı İncele</a>
-    </div>
-  </section>
-
-  <footer style="background-color:#0f172a; color:#cbd5e1; text-align:center; padding:1.5rem 1rem; font-size:0.9rem;">
-    <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
-  </footer>
-
-  <div id="cta-bubble" style="position:fixed; bottom:1.5rem; right:1rem; background-color:#38bdf8; color:#0f172a; padding:0.75rem 1rem; border-radius:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.3); cursor:pointer; font-weight:600; z-index:10; font-size:0.85rem;">
-    💬 Size nasıl yardımcı olabiliriz?
+<section class="section">
+  <div class="service-box">
+    <h3>Strateji & Organizasyon</h3>
+    <p>Fintek'ler için vizyona uygun yapı, süreç ve OKR sistemleri kurarız.</p>
+    <a href="services.html#strategy">Detaylı İncele</a>
   </div>
+  <div class="service-box">
+    <h3>Erken Aşama Danışmanlık</h3>
+    <p>Pre-seed/seed aşamasında ürün-pazar uyumu, yatırım hikâyesi ve MVP desteği sunarız.</p>
+    <a href="services.html#early-stage">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İş Geliştirme</h3>
+    <p>Aktif fintek'ler için büyükme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
+    <a href="services.html#growth">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>Teknoloji & Altyapı</h3>
+    <p>Regülasyon uyumlu, doğru mimari ve çözüm ortağı seçimleri ile teknik yapılar kurarız.</p>
+    <a href="services.html#tech">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İnsan Kaynağı</h3>
+    <p>Doğru ekip yapısı, liderlik gelişimi ve kültür mimarisiyle sürdürülebilir kadrolar inşa ederiz.</p>
+    <a href="services.html#team">Detaylı İncele</a>
+  </div>
+  <div class="service-box">
+    <h3>İletişim & Marka</h3>
+    <p>Stratejiye uygun içerik, mecra ve dil seçimiyle yatırımcı ve kullanıcıya doğru sesleniriz.</p>
+    <a href="services.html#communication">Detaylı İncele</a>
+  </div>
+</section>
 
-  <script>
-    document.querySelector('#cta-bubble').addEventListener('click', function() {
-      window.location.href = 'contact.html';
-    });
+<footer style="background-color:#0f172a; color:#cbd5e1; text-align:center; padding:1.5rem 1rem; font-size:0.9rem;">
+  <p>© 2025 FintiQ. Tüm hakları saklıdır.</p>
+</footer>
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const slides = document.querySelectorAll('.hero-slider .slide');
-      let index = 0;
-      setInterval(() => {
-        slides.forEach(slide => slide.classList.remove('active'));
-        index = (index + 1) % slides.length;
-        slides[index].classList.add('active');
-      }, 5000);
-    });
-  </script>
+<div id="cta-bubble" style="position:fixed; bottom:1.5rem; right:1rem; background-color:#38bdf8; color:#0f172a; padding:0.75rem 1rem; border-radius:2rem; box-shadow:0 4px 12px rgba(0,0,0,0.3); cursor:pointer; font-weight:600; z-index:10; font-size:0.85rem;">
+  💬 Size nasıl yardımcı olabiliriz?
+</div>
+
+<script>
+  document.querySelector('#cta-bubble').addEventListener('click', function() {
+    window.location.href = 'contact.html';
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let index = 0;
+    setInterval(() => {
+      slides.forEach(slide => slide.classList.remove('active'));
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 5000);
+  });
+</script>
 </body>
 </html>
