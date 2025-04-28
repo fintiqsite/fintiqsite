@@ -63,26 +63,27 @@
         display: block;
         margin-left: auto;
     }
-      nav ul {
+      nav {
         display: none;
         flex-direction: column;
         background-color: #111827;
         padding: 1rem;
         border-radius: 8px;
-        width: 100%;
         position: absolute;
         top: 100%;
-        right: 0;
+        right: 2rem;
+        width: 200px;
+        z-index: 9;
       }
-      nav ul.active {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin: 0;
+      }
+      nav.active {
         display: flex;
       }
-      .menu-toggle:focus,
-      .menu-toggle:active {
-      color: #38bdf8;
-    }
-      .menu-toggle.active {
-      color: #38bdf8;
     }
     .hero {
       text-align: center;
@@ -256,11 +257,11 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector('.menu-toggle');
-    const navUl = document.querySelector('nav ul'); // sadece ul'yi yakalıyoruz
+    const nav = document.querySelector('nav');
 
     menuToggle.addEventListener('click', function() {
-      navUl.classList.toggle('active');    // sadece menü açılıp kapanıyor
-      menuToggle.classList.toggle('active'); // hamburger ikonu arka planı değişiyor
+    nav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
     });
 
     const slides = document.querySelectorAll('.hero-slider .slide');
@@ -272,12 +273,11 @@
     }, 5000);
 
     const ctaBubble = document.getElementById('cta-bubble');
-    if (ctaBubble) {
-      ctaBubble.addEventListener('click', function() {
-        window.location.href = 'contact.html';
-   });
+    ctaBubble.addEventListener('click', function() {
+      window.location.href = 'contact.html';
+    });
+  });
 </script>
-
 
 </body>
 </html>
