@@ -256,11 +256,11 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
+    const navUl = document.querySelector('nav ul'); // sadece ul'yi yakalıyoruz
 
     menuToggle.addEventListener('click', function() {
-    nav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+      navUl.classList.toggle('active');    // sadece menü açılıp kapanıyor
+      menuToggle.classList.toggle('active'); // hamburger ikonu arka planı değişiyor
     });
 
     const slides = document.querySelectorAll('.hero-slider .slide');
@@ -272,11 +272,12 @@
     }, 5000);
 
     const ctaBubble = document.getElementById('cta-bubble');
-    ctaBubble.addEventListener('click', function() {
-      window.location.href = 'contact.html';
-    });
-  });
+    if (ctaBubble) {
+      ctaBubble.addEventListener('click', function() {
+        window.location.href = 'contact.html';
+   });
 </script>
+
 
 </body>
 </html>
