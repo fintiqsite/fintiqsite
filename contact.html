@@ -196,18 +196,6 @@
 </footer>
 
 <script>
-  // Hamburger menü rengi ve açma/kapama kontrolü
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
-
-    menuToggle.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
-  });
-
-  // Form gönderim kodun aynen korunuyor
   document.getElementById("fintiq-form").addEventListener("submit", function(e) {
     e.preventDefault();
     const form = e.target;
