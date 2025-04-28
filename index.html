@@ -254,6 +254,7 @@
 
     menuToggle.addEventListener('click', function() {
       nav.classList.toggle('active');
+      menuToggle.classList.toggle('open'); // >>> BURAYA EKLEDİM
     });
 
     const slides = document.querySelectorAll('.hero-slider .slide');
