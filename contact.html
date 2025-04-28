@@ -80,6 +80,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
+        margin: 0;
       }
       nav ul.active {
         display: flex;
@@ -110,8 +111,12 @@
       font-size: 1rem;
       background-color: #ffffff;
       color: #0f172a;
-      width: 100%;
-      box-sizing: border-box;
+    }
+    input::placeholder {
+      color: #64748b;
+    }
+    select {
+      color: #64748b;
     }
     button {
       padding: 0.75rem;
@@ -149,7 +154,7 @@
       <img src="images/fintiq_logo_transparent.png" alt="FintiQ Logo">
     </a>
   </div>
-  <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+  <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">&#9776;</button>
   <nav>
     <ul>
       <li><a href="services.html">Hizmetlerimiz</a></li>
@@ -176,7 +181,13 @@
     <input type="text" name="adsoyad" placeholder="Ad Soyad" required>
     <input type="tel" name="telefon" placeholder="Cep Telefonu" required>
     <input type="email" name="email" placeholder="E-posta Adresiniz" required>
-    <input type="text" name="kaynak" placeholder="Bizi nereden duydunuz?" required>
+    <select name="kaynak" required>
+      <option value="" disabled selected hidden>Bizi nereden duydunuz?</option>
+      <option value="Sosyal Medya">Sosyal Medya</option>
+      <option value="Fuar/Organizasyon">Fuar / Organizasyon</option>
+      <option value="Tavsiye">Tavsiye</option>
+      <option value="Diger">Diğer</option>
+    </select>
     <input type="text" name="kod" placeholder="İletişim Kodu">
     <button type="submit">Gönder</button>
   </form>
@@ -214,5 +225,6 @@
     });
   });
 </script>
+
 </body>
 </html>
