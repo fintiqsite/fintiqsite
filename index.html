@@ -58,32 +58,31 @@
     nav ul li a:hover {
       color: #38bdf8;
     }
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-        margin-left: auto;
+   @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      margin-left: auto;
     }
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #111827;
-        padding: 1rem;
-        border-radius: 8px;
-        position: absolute;
-        top: 100%;
-        right: 2rem;
-        width: 200px;
-        z-index: 9;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        margin: 0;
-      }
-      nav.active {
-        display: flex;
-      }
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #111827;
+      padding: 1rem;
+      border-radius: 8px;
+      position: absolute;
+      top: 100%;
+      right: 2rem;
+      width: 200px;
+      z-index: 9;
+    }
+    nav.active {
+      display: flex;
+    }
+    nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      margin: 0;
     }
     .hero {
       text-align: center;
@@ -261,7 +260,6 @@
 
     menuToggle.addEventListener('click', function() {
     nav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
     });
 
     const slides = document.querySelectorAll('.hero-slider .slide');
