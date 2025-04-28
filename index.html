@@ -63,27 +63,26 @@
         display: block;
         margin-left: auto;
     }
-      nav {
+      nav ul {
         display: none;
         flex-direction: column;
         background-color: #111827;
         padding: 1rem;
         border-radius: 8px;
+        width: 100%;
         position: absolute;
         top: 100%;
-        right: 2rem;
-        width: 200px;
-        z-index: 9;
+        right: 0;
       }
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        margin: 0;
-      }
-      nav.active {
+      nav ul.active {
         display: flex;
       }
+      .menu-toggle:focus,
+      .menu-toggle:active {
+      color: #38bdf8;
+    }
+      .menu-toggle.active {
+      color: #38bdf8;
     }
     .hero {
       text-align: center;
