@@ -42,7 +42,7 @@
       align-items: center;
     }
     nav ul {
-      list-: none;
+      list-style: none;
       display: flex;
       gap: 1.5rem;
       margin: 0;
@@ -59,62 +59,42 @@
       color: #38bdf8;
     }
     @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
-
-  nav {
-    display: none;
-    flex-direction: column;
-    background-color: #111827;
-    padding: 1rem;
-    border-radius: 8px;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    z-index: 9;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-
-  nav ul li {
-    width: 100%;
-  }
-
-  nav ul li a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 0; /* daha dar boşluk */
-  }
-
-  .menu-toggle:focus,
-  .menu-toggle:active {
-    color: #38bdf8;
-  }
-
-  .menu-toggle.active {
-    background-color: #38bdf8;
-    border-radius: 12px;
-    padding: 0.5rem;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #0f172a;
-  }
+      .menu-toggle {
+        display: block;
+        margin-left: auto;
+      }
+      .menu-toggle.active {
+        background-color: #38bdf8;
+        border-radius: 12px;
+        padding: 0.5rem;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #111827;
+        padding: 1rem;
+        border-radius: 8px;
+        position: absolute;
+        top: 100%;
+        right: 2rem;
+        width: 200px;
+        z-index: 9;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin: 0;
+      }
+      nav.active {
+        display: flex;
+      }
+    }
     .hero {
       text-align: center;
       padding: 5rem 2rem 4rem;
@@ -123,7 +103,7 @@
     }
     .tagline {
       font-size: 1.4rem;
-      font-: italic;
+      font-style: italic;
       color: #38bdf8;
       margin-bottom: 1.5rem;
     }
@@ -192,20 +172,9 @@
       opacity: 1;
       z-index: 1;
     }
-   .menu-toggle.active {
-  background-color: #38bdf8;
-  border-radius: 12px;
-  padding: 0.5rem;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
   </style>
 </head>
 <body>
-
 <header>
   <div class="logo">
     <a href="index.html">
@@ -256,7 +225,7 @@
   </div>
   <div class="service-box">
     <h3>İş Geliştirme</h3>
-    <p>Aktif fintek'ler için büyüme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
+    <p>Aktif fintek'ler için büyme, iş ortaklıkları ve satış stratejileri geliştiririz.</p>
     <a href="services.html#growth">Detaylı İncele</a>
   </div>
   <div class="service-box">
@@ -290,8 +259,8 @@
     const nav = document.querySelector('nav');
 
     menuToggle.addEventListener('click', function() {
-    nav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
     });
 
     const slides = document.querySelectorAll('.hero-slider .slide');
