@@ -59,41 +59,41 @@
       color: #38bdf8;
     }
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-        margin-left: auto;
-      }
-      .menu-toggle.active {
-        background-color: #38bdf8;
-        border-radius: 12px;
-        padding: 0.5rem;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: #111827;
-        padding: 1rem;
-        border-radius: 8px;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100px;
-        z-index: 9;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        margin: 0;
-      }
-      nav.active {
-        display: flex;
-      }
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #111827;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle:focus,
+  .menu-toggle:active {
+    color: #38bdf8;
+  }
+
+  .menu-toggle.active {
+    background-color: #38bdf8;
+    border-radius: 12px;
+    padding: 0.5rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
     .hero {
       text-align: center;
